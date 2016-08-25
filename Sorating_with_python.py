@@ -23,7 +23,7 @@ def arrayShuffle(x):
 
 #--- Bubble functions ---
 
-def swap (a, b, index, array):
+def swap(a, b, index, array):
     print ('index ' + str(index) + ' : a ' + str(a) + " : b " + str(b))
     array.insert(index, b)
     array.insert(index+1,a)
@@ -54,7 +54,19 @@ def bubbleSort(bubbleArray):
 
 #Insertion Sort
 
-#def insertionSort(array):
+def insertionSort(array):
+    print(array)
+    for index in range(len(array)):
+        currentValue = array[index]
+        position = index
+
+        while position > 0 and array[position-1] > currentValue:
+            array[position]=array[position-1]
+            position = position-1
+
+        array[position] = currentValue
+    return
+    
     #while unordered:
        # for x in range(len(bubbleArray)-1):
           
@@ -66,7 +78,7 @@ def bubbleSort(bubbleArray):
 #MergeSort
 
         
-print(array)
-bubbleSort(arrayShuffle(array))
-#insertionSort(arrayShuffle(array))
 
+#bubbleSort(arrayShuffle(array))
+insertionSort(arrayShuffle(array))
+print(array)
